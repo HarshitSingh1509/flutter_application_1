@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -26,7 +27,26 @@
   <title>flutter_application_1</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA-H3ll_QyLGK4HZMuMzQHliuRvEYYe0mQ",
+      authDomain: "geolocation-4f95e.firebaseapp.com",
+      databaseURL: "https://geolocation-4f95e-default-rtdb.firebaseio.com",
+      projectId: "geolocation-4f95e",
+      storageBucket: "geolocation-4f95e.appspot.com",
+      messagingSenderId: "543142297042",
+      appId: "1:543142297042:web:11b467402e5ed402225c0b",
+      measurementId: "G-CMKNKWMS7Y"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -95,4 +115,5 @@
     }
   </script>
 </body>
+
 </html>

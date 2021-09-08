@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/datacheck.dart';
 import 'package:flutter_application_1/idtaker.dart';
 import 'package:flutter_application_1/reciever.dart';
 import 'package:flutter_application_1/sender.dart';
@@ -35,48 +36,55 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: 200,
-                color: Colors.blue,
-                child: TextButton(
-                  child: Text("Sender"),
-                  style: TextButton.styleFrom(
-                    primary: Colors.black,
+    return MaterialApp(
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text(widget.title),
+            ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: 500,
+                    color: Colors.blue,
+                    child: TextButton(
+                      child: Text("Send Your Geo Data"),
+                      style: TextButton.styleFrom(
+                        primary: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Sender()),
+                        );
+                      },
+                    ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Sender()),
-                    );
-                  },
-                ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  // Container(
+                  //   width: 200,
+                  //   color: Colors.blue,
+                  //   child: TextButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) =>
+                  //                 Reciever("eaec8d1bc4e97fe7")),
+                  //       );
+                  //     },
+                  //     child: Text("Reciever"),
+                  //     style: TextButton.styleFrom(
+                  //       primary: Colors.black,
+                  //     ),
+                  //   ),
+                  // )
+                ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-//         Container(
-//           width: 200,
-//           color: Colors.blue,
-//           child: TextButton(onPressed:  () {
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(builder: (context) => IdTaker()),
-//   );
-// }, child: Text("Reciever"), style:  TextButton.styleFrom(
-//           primary: Colors.black,
-//     ),),
-//         )
-            ],
-          ),
-        ));
+            )));
   }
 }
